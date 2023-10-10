@@ -4,10 +4,10 @@ using namespace std;
 
 struct student {
 
-    int id,semester_no,credits_completed;
+    int id,semester_no,credit_completed;
     float cgpa;
 
-    }
+    };
 
 int main()
 {
