@@ -1,0 +1,92 @@
+#include<iostream>
+
+using namespace std;
+
+struct student {
+
+    int id,semester_no,credits_completed;
+    float cgpa;
+
+    }
+
+int main()
+{
+    student s[10];
+    
+
+  cout<<"Enter student id, semester no, credits completed, cgpa"<<endl;
+    s[1].id               = 1;
+    s[1].semester_no      = 1;
+    s[1].credit_completed = 15;
+    s[1].cgpa             = 3.9;
+    
+    s[2].id               = 2;
+    s[2].semester_no      = 2;
+    s[2].credit_completed = 30;
+    s[2].cgpa             = 3.5;
+    
+    s[3].id               = 3;
+    s[3].semester_no      = 3;
+    s[3].credit_completed = 45;
+    s[3].cgpa             = 3.3;
+    
+    s[4].id               = 4;
+    s[4].semester_no      = 4;
+    s[4].credit_completed = 52;
+    s[4].cgpa             = 3.9;
+    
+    s[5].id               = 5;
+    s[5].semester_no      = 5;
+    s[5].credit_completed = 60;
+    s[5].cgpa             = 3.75;
+    
+    s[6].id               = 6;
+    s[6].semester_no      = 6;
+    s[6].credit_completed = 78;
+    s[6].cgpa             = 3.45;
+    
+    s[7].id               = 7;
+    s[7].semester_no      = 7;
+    s[7].credit_completed = 85;
+    s[7].cgpa             = 3.88;
+    
+    s[8].id               = 8;
+    s[8].semester_no      = 8;
+    s[8].credit_completed = 95;
+    s[8].cgpa             = 3.66;
+    
+     
+    s[9].id               = 9;
+    s[9].semester_no      = 9;
+    s[9].credit_completed = 105;
+    s[9].cgpa             = 3.78;
+    
+     
+    s[10].id               = 10;
+    s[10].semester_no      = 10;
+    s[10].credit_completed = 115;
+    s[10].cgpa             = 3.66;
+    
+  for(int i=0;i<10;i++)
+   {
+       if(s[i].cgpa > 3.75)
+       {
+            cout<<s[i].id<<endl;
+       }
+   }
+
+ 
+
+   cout<<"\nStudent ID who have completed more than 50 credits : ";
+   for(int i=0;i<10;i++)
+   {
+       if(s[i].credit_completed> 50)
+       {
+            cout<<s[i].credit_completed<<endl;
+       }
+   }
+   cout<<endl;
+   return 0;
+
+
+}
