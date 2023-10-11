@@ -1,0 +1,79 @@
+#include <iostream>
+#include <string>
+
+using namespace std ;
+
+
+
+struct BankAccount {
+    int accountNumber;
+    string accountHolderName;
+    float balance;
+};
+
+void deposit(BankAccount &account, double amount) {
+    if (amount > 0) {
+        account.balance += amount;
+        std::cout << "Deposited Taka" << amount << " into the account." << std::endl;
+    } else {
+        std::cout << "Invalid deposit amount." << std::endl;
+    }
+}
+
+void withdraw(BankAccount &account, double amount) {
+    if (amount > 0 && amount <= account.balance) {
+        account.balance -= amount;
+        std::cout << "Withdrawn Taka" << amount << " from the account." << std::endl;
+    } else {
+        std::cout << "Invalid withdrawal amount or insufficient balance." << std::endl;
+    }
+}
+
+void displayAccountDetails(const BankAccount &account) {
+    std::cout << "Account Number: " << account.accountNumber << std::endl;
+    std::cout << "Account Holder Name: " << account.accountHolderName << std::endl;
+    std::cout << "Balance: Taka" << account.balance << std::endl;
+}
+
+int main() {
+    BankAccount myAccount;
+    myAccount.accountNumber = 1234;
+    myAccount.accountHolderName = "S";
+    myAccount.balance = 10000.0;
+
+    int choice;
+    double amount;
+
+    while (true) {
+        std::cout << "Choose an option:" << std::endl;
+        std::cout << "1. Deposit" << std::endl;
+        std::cout << "2. Withdraw" << std::endl;
+        std::cout << "3. Display Account Details" << std::endl;
+        std::cout << "4. Exit" << std::endl;
+        std::cout << "Enter your choice: ";
+        std::cin >> choice;
+
+        switch (choice) {
+            case 1:
+                std::cout << "Enter the deposit amount: Taka";
+                std::cin >> amount;
+                deposit(myAccount, amount);
+                break;
+            case 2:
+                std::cout << "Enter the withdrawal amount: Taka";
+                std::cin >> amount;
+                withdraw(myAccount, amount);
+                break;
+            case 3:
+                displayAccountDetails(myAccount);
+                break;
+            case 4:
+                std::cout << "Exiting program." << std::endl;
+                return 0;
+            default:
+                std::cout << "Invalid choice. Please try again." << std::endl;
+        }
+    }
+
+    return 0;
+}
